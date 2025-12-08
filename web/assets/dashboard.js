@@ -90,6 +90,35 @@ function loadConfig() {
     console.warn("Failed to parse saved config", err);
   }
   els.deviceHost.value = config.deviceAddress || "";
+  
+  if (window.location.protocol.startsWith("http")) {
+    const current = window.location.origin;
+    const stored = els.deviceHost.value;
+    
+    if (!stored) {
+      els.deviceHost.value = current;
+    } else {
+      try {
+        const currentUrl = new URL(current);
+        let storedUrlStr = stored;
+        if (!/^https?:\/\//i.test(storedUrlStr)) storedUrlStr = `http://${storedUrlStr}`;
+        const storedUrl = new URL(storedUrlStr);
+        if (!storedUrl.port) storedUrl.port = "8000";
+        
+        if (currentUrl.hostname === storedUrl.hostname && currentUrl.port !== storedUrl.port) {
+           console.log("Auto-updating host port to match current page origin");
+           els.deviceHost.value = current;
+        }
+      } catch (e) {
+        // ignore invalid stored url
+      }
+    }
+    
+    // Ensure the config object reflects the auto-detected or updated value
+    if (els.deviceHost.value !== (config.deviceAddress || "")) {
+       config.deviceAddress = els.deviceHost.value;
+    }
+  }
   updateResolvedBaseUrl();
   setVideoSrc();
 }

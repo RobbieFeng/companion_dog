@@ -69,4 +69,3 @@ To prevent accidents, the robot runs background safety checks:
 The system is designed to work with a cloud backend for data analysis.
 -   **Data Logging:** Automatically uploads activity logs and snapshots to a configured Google Cloud Platform (GCP) server.
 -   **Emotion Insights:** Can fetch daily summaries or "emotion analysis" reports from the cloud, displaying them on the dashboard to give you insights into your pet's activity levels.
-@

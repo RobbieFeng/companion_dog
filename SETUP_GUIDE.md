@@ -1,6 +1,6 @@
 # Picar-X Environment Setup Guide
 
-This guide details the complete installation process for the Picar-X Robot project on a Raspberry Pi.
+This guide details the complete installation process for the Picar-X Robot project on a Raspberry Pi (Recommended: **Raspberry Pi 5**).
 
 ## 1. Prerequisites & System Update
 
@@ -73,4 +73,4 @@ If you see the help message, the environment is set up correctly.
 
 ## 5. (Optional) Legacy Picar-X Library
 
-The core Picar-X control code is **included** in this project directly (under `pet_follower/picarx`), so you do **NOT** need to install the system-wide `picar-x` library. If you have it installed, it shouldn't conflict, but this project uses its own modified version.
+The core Picar-X control code is **included** in this project directly (under the `picarx` folder), so you do **NOT** need to install the system-wide `picar-x` library. If you have it installed, it shouldn't conflict, but this project uses its own modified version.

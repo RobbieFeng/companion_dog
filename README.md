@@ -4,6 +4,10 @@ This project implements a pet follower behavior on the SunFounder Picar-X robot 
 
 ## Setup
 
+**Note:** This project is designed for and tested on the **Raspberry Pi 5** for optimal performance with YOLOv8.
+
+**Cloud Server:** Some AI functionality (Data Logging, Emotion Insights) requires a separate cloud server. You can find the server code here: [https://github.com/CHCYLI/petCar/tree/main](https://github.com/CHCYLI/petCar/tree/main).
+
 Follow the [SETUP_GUIDE.md](SETUP_GUIDE.md) to install dependencies and the Picar-X library.
 
 ## Running the API Server

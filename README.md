@@ -1,6 +1,6 @@
 # Pet Follower Project
 
-This project implements a pet follower behavior on the SunFounder Picar-X robot using a Raspberry Pi.
+This project implements a pet follower behavior using a Raspberry Pi. It enables autonomous pet tracking to keep your furry companion company, analyzes pet behavior patterns to understand their daily activities, and provides emotion insights to help you better connect with your pet's feelings and well-being.
 
 ## Setup
 
@@ -8,7 +8,7 @@ This project implements a pet follower behavior on the SunFounder Picar-X robot 
 
 **Cloud Server:** Some AI functionality (Data Logging, Emotion Insights) requires a separate cloud server. You can find the server code here: [https://github.com/CHCYLI/petCar/tree/main](https://github.com/CHCYLI/petCar/tree/main).
 
-Follow the [SETUP_GUIDE.md](SETUP_GUIDE.md) to install dependencies and the Picar-X library.
+Follow the [SETUP_GUIDE.md](SETUP_GUIDE.md) to install dependencies and required libraries.
 
 ## Running the API Server
 
@@ -40,7 +40,7 @@ http://<raspberry-pi-ip>:8000/dashboard.html
 
 ## Functionality
 
-This project turns the Picar-X into an autonomous pet companion with the following capabilities:
+This project creates an autonomous pet companion with the following capabilities:
 
 ### 1. Intelligent Pet Tracking
 The robot uses **Computer Vision** to recognize and follow your pet (specifically dogs by default).

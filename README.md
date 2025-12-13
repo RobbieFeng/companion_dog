@@ -1,10 +1,10 @@
-# Pet Follower Project
+# AI-Powered Pet Companion Robot Project
 
-This project implements a pet follower behavior using a Raspberry Pi. It enables autonomous pet tracking to keep your furry companion company, analyzes pet behavior patterns to understand their daily activities, and provides emotion insights to help you better connect with your pet's feelings and well-being.
+This project implements the intelligent robot using a Raspberry Pi 5. It enables autonomous pet tracking to keep your furry companion company, analyzes pet behavior patterns to understand their daily activities, and provides emotion insights to help you better connect with your pet's feelings and well-being.
 
 ## Setup
 
-**Note:** This project is designed for and tested on the **Raspberry Pi 5** for optimal performance with YOLOv8.
+**Note:** This project is designed for and tested on the **Raspberry Pi 5** for optimal performance with YOLOv5.
 
 **Cloud Server:** Some AI functionality (Data Logging, Emotion Insights) requires a separate cloud server. You can find the server code here: [https://github.com/CHCYLI/petCar/tree/main](https://github.com/CHCYLI/petCar/tree/main).
 
@@ -25,15 +25,22 @@ python3 api_server.py
 By default, the server listens on port **8000**. You can specify a different host or port:
 
 ```bash
-python3 api_server.py --host 0.0.0.0 --port 8080
+python3 api_server.py --host 0.0.0.0 --port 8000
 ```
 
 ### 2. Access the Dashboard
 
+Expose port 8080:
+
+```bash
+cd ./web
+python3 -m http.server 8080
+```
+
 Open your web browser and navigate to:
 
 ```
-http://<raspberry-pi-ip>:8000/dashboard.html
+http://<raspberry-pi-ip>:8080/dashboard.html
 ```
 
 (Replace `<raspberry-pi-ip>` with the IP address of your Raspberry Pi)
@@ -44,7 +51,7 @@ This project creates an autonomous pet companion with the following capabilities
 
 ### 1. Intelligent Pet Tracking
 The robot uses **Computer Vision** to recognize and follow your pet (specifically dogs by default).
--   **AI Detection:** Utilizes the **YOLOv8** model (via `ultralytics`) to identify pets in real-time.
+-   **AI Detection:** Utilizes the **YOLOv5** model (via `ultralytics`) to identify pets in real-time.
 -   **Auto-Follow:** When a pet is detected, the robot adjusts its steering and speed to keep the pet centered in the frame.
 -   **Distance Maintenance:** It attempts to stay at a "safe distance" (e.g., 50cm). It moves forward if too far, stops if close, and backs up if too close.
 
@@ -69,3 +76,4 @@ To prevent accidents, the robot runs background safety checks:
 The system is designed to work with a cloud backend for data analysis.
 -   **Data Logging:** Automatically uploads activity logs and snapshots to a configured Google Cloud Platform (GCP) server.
 -   **Emotion Insights:** Can fetch daily summaries or "emotion analysis" reports from the cloud, displaying them on the dashboard to give you insights into your pet's activity levels.
+
